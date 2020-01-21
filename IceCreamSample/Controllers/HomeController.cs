@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using IceCreamSample.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace IceCreamSample.Controllers
 {
@@ -18,8 +19,31 @@ namespace IceCreamSample.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(IFormCollection data)
+        {
+            IceCream ice = new IceCream();
+            ice.Flavor = data["flavor"];
+            try
+            {
+                ice.Scoops = Convert.ToByte(data["scoops"]);
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+            ice.Container = data["container"];
+
+            //TODO: Add to db
+
+            ViewData["Success"] = "Order Complete!";
+
             return View();
         }
 

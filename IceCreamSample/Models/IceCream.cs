@@ -10,16 +10,16 @@ namespace IceCreamSample
         /// <summary>
         /// The flavor of the Ice Cream
         /// </summary>
-        string Flavor { get; set; }
+        public string Flavor { get; set; }
 
         /// <summary>
         /// The number of scoops of Ice Cream
         /// </summary>
-        byte Scoops { get; set; }
+        public byte Scoops { get; set; }
 
         /// <summary>
         /// The type of container for the Ice Cream (Cone or Cup)
         /// </summary>
-        string Container { get; set; }
+        public string Container { get; set; }
     }
 }
