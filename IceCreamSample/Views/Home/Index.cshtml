@@ -2,17 +2,24 @@
     ViewData["Title"] = "Your one stop shop for Ice Cream";
 }
 
-<h1>Welcome to ICE CREAM!</h1>
+@if (ViewData["Success"] != null)
+{
+    <h2 class="alert-light">@ViewData["Success"]</h2>
+}
+else
+{
+    <h1>Welcome to ICE CREAM!</h1>
 
-<form method="post">
-    <label for="flavor">Flavor: </label>
-    <input type="text" name="flavor" id="flavor" />
-    <br />
-    <label for="scoops">Number Of Scoops: </label>
-    <input type="text" name="scoops" id="scoops" />
-    <br />
-    <label for="container">Container(Cone or Cup): </label>
-    <input type="text" name="container" id="container" />
-    <br />
-    <button type="submit">Order Ice Cream</button>
-</form>
+    <form method="post">
+        <label for="flavor">Flavor: </label>
+        <input type="text" name="flavor" id="flavor" />
+        <br />
+        <label for="scoops">Number Of Scoops: </label>
+        <input type="text" name="scoops" id="scoops" />
+        <br />
+        <label for="container">Container(Cone or Cup): </label>
+        <input type="text" name="container" id="container" />
+        <br />
+        <button type="submit">Order Ice Cream</button>
+    </form>
+}
