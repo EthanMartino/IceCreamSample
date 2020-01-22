@@ -1,0 +1,19 @@
+﻿@model IceCream
+@{
+    ViewData["Title"] = "Your one stop shop for Ice Cream";
+}
+
+<h1>Welcome to ICE CREAM!</h1>
+
+<form method="post">
+    <label asp-for="Flavor">Flavor: </label>
+    <input asp-for="Flavor" />
+    <br />
+    <label asp-for="Scoops">Number Of Scoops: </label>
+    <input asp-for="Scoops" />
+    <br />
+    <label asp-for="Container">Conatiner(Cone or Cup): </label>
+    <input asp-for="Container" />
+    <br />
+    <button type="submit">Order Ice Cream!</button>
+</form>
