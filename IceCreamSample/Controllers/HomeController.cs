@@ -40,7 +40,8 @@ namespace IceCreamSample.Controllers
             }
             ice.Container = data["container"];
 
-            //TODO: Add to db
+            //Add to db
+            IceCreamDB.Add(ice);
 
             ViewData["Success"] = "Order Complete!";
 

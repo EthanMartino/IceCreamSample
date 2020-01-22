@@ -19,7 +19,9 @@ namespace IceCreamSample.Controllers
         {
             if (ModelState.IsValid)
             {
-                //TODO: add to db
+                //add to db
+                IceCreamDB.Add(ice);
+                
                 return RedirectToAction("Index", "Success");
             }
             else
